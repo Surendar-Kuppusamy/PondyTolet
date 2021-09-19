@@ -1,0 +1,10 @@
+Create index file and install express
+npm install express --save
+npm install dotenv
+npm i morgan
+npm install --save path
+npm i body-parser
+npm i multer
+npm i rotating-file-stream
+npm i winston
+npm i mongoose
