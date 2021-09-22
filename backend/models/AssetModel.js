@@ -14,11 +14,11 @@ const AssetSchema = new Schema({
         ref: 'TypeOfAssets'
     },
     asset_for: {        //asset_for(1 - Rent, 2 - for lease, 3 - "Sale")
-        type: String,
+        type: INT,
         required: [true, 'Asset for required.'],
         enum: {
-            values: ["Rent", "Lease", "Sale"],
-            message: '{VALUE} is invalid asset for.'
+            values: [1, 2, 3],
+            message: 'Invalid asset for.'
         }
     },
     asset_name: {

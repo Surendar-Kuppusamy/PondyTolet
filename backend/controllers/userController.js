@@ -41,11 +41,6 @@ const signup = asyncHandler(async(req, res, next) => {
             message: 'User created',
             user: user
         });
-    } else {
-        res.status(400).json({
-            status: 'error',
-            message: 'Something went wrong'
-        })
     }
 })
 

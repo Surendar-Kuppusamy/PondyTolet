@@ -46,7 +46,7 @@ const UserSchema = new Schema({
         type: Number,
         trim: true,
         required: [true, 'Mobile number required.'],
-        /* validate: {
+        validate: {
             validator: function(value) {
                 return new Promise((resolve, reject) => {
                     if(value.toString().length != 10) {
@@ -57,7 +57,7 @@ const UserSchema = new Schema({
                 });
             },
             message: 'Mobile number must be 10 digits'
-        } */
+        }
     },
     telephone_number:  {
         type: String,
