@@ -1,0 +1,45 @@
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+D:\Apache\Apache24\htdocs\Server\React\DemoProject\demo\src\store\index.js:
+
+//import storage from 'redux-persist/lib/storage';
+//import { persistStore, persistReducer } from 'redux-persist';
+
+/* const persistConfig = {
+    key: 'root',
+    storage,
+}
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+const persistorStore = createStore(persistedReducer, composeWithDevTools(applyMiddleware(thunkMiddleware)));
+export const store = persistStore(persistorStore); */
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+store.dispatch({ type: INCREMENT });
+  const state = store.getState();
+  const mapStateToProps = state => ({ ...state.value });
+  const mapDispatchToProps = dispatch => ({
+    /* onChangeEmail: value =>
+      dispatch({ type: UPDATE_FIELD_AUTH, key: 'email', value }),
+    onChangePassword: value =>
+      dispatch({ type: UPDATE_FIELD_AUTH, key: 'password', value }),
+    onChangeUsername: value =>
+      dispatch({ type: UPDATE_FIELD_AUTH, key: 'username', value }),
+    onSubmit: (username, email, password) => {
+      const payload = agent.Auth.register(username, email, password);
+      dispatch({ type: REGISTER, payload })
+    }, */
+    onLoad: () => {
+      dispatch({ type: INCREMENT })
+    },
+    onUnload: () =>
+      dispatch({ type: INCREMENT })
+  });
+
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+

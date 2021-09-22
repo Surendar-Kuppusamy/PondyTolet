@@ -1,0 +1,51 @@
+For store state in local storage and:
+
+https://stackoverflow.com/questions/35305661/where-to-write-to-localstorage-in-a-redux-app
+https://redux.js.org/tutorials/fundamentals/part-4-store#loading-initial-state
+
+
+
+For function component hooks form example
+
+https://rangle.io/blog/simplifying-controlled-inputs-with-hooks/
+
+
+For yup password validation
+
+https://stackoverflow.com/questions/49502436/password-validation-with-yup-and-formik
+
+
+For encrypt and decrypt
+
+https://www.npmjs.com/package/cryptr
+
+
+For Date picker // Not used
+
+https://hypeserver.github.io/react-date-range/
+
+
+For datepicker substract, add function
+
+https://blog.logrocket.com/how-to-build-an-accessible-date-picker-component-in-react/
+
+
+For loader on DOM render in react js
+
+https://stackoverflow.com/questions/40987309/react-display-loading-screen-while-dom-is-rendering#answer-56046868
+
+
+For create token text or label in select
+
+https://stackoverflow.com/questions/51706702/react-select-creatable-hide-only-create-new-message#answer-51758726
+https://react-select.com/props#creatable-props
+formatCreateLabel    // For change "Create" word in react select
+
+
+
+For date parsing using date picker
+
+https://codedaily.io/tutorials/Yup-Date-Validation-with-Custom-Transform
+
+For solve the default option for dropdown
+https://github.com/fraserxu/react-dropdown/blob/master/example/objectArrayExample.js

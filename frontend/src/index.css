@@ -1,0 +1,48 @@
+@import "../node_modules/react-toastify/dist/ReactToastify.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/react-datepicker/dist/react-datepicker.css";
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FAFAFA;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.loader {
+  position: fixed;
+  top:45%;
+  left:45%;
+}
+.footer {
+  text-align: center;
+  position: fixed;
+  bottom:10px;
+  left:45%;
+  right:45%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #8bbafe;
+  outline: 0;
+  box-shadow: 0 0 0 0rem rgba(13, 110, 253, 0.25);
+}
+.max-wid-5 {
+  max-width: 5%;
+}

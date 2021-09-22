@@ -1,0 +1,26 @@
+Installed Packages:
+-------------------
+npm install --save redux
+npm install --save react-redux
+npm install --save-dev redux-devtools
+npm i redux-persist
+npm i redux-thunk
+npm i mongoose
+npm install --save redux-devtools-extension
+npm install react-router-dom
+npm i bootstrap@5.0.0-alpha1
+npm install formik --save
+npm install yup --save
+npm install react-date-range
+npm uninstall react-date-range
+npm install react-bootstrap-date-picker
+npm uninstall react-bootstrap-date-picker
+npm i react-datepicker
+npm i --save react-select
+npm i dotenv
+npm i @popperjs/core    // Not useable
+npm i react-dropdown
+npm install react-step-wizard
+npm i react-dropzone
+npm i axios
+npm i react-toastify
