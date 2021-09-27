@@ -7,7 +7,6 @@ import LoadingIndicator from '../common/LoadingIndicator';
 
 
 function AssetAddFormWizzardStep6(props) {
-    window.scrollTo(0, 0);
     const handleNext = async () => {
         await props.formikProps.setTouched({['asset_available_on_from']:true, ['notice_period_for_vocate_asset']:true, ['notice_period_for_vocate_asset_type']:true, ['asset_status_now']:true, ['show_my_asset_for_tenants']:true});
         console.log(props);

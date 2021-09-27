@@ -5,7 +5,6 @@ import { FieldArray, ErrorMessage } from 'formik';
 
 
 function AssetAddFormWizzardStep2(props) {
-    window.scrollTo(0, 0);
     const handleNext = async () => {
         await props.formikProps.setTouched({['asset_name']:true, ['door_number']:true, ['address_hint']:true, ['street']:true, ['nagar']:true, ['city']:true, ['state']:true, ['pincode']:true, ['landmark']:true});
         if(props.formikProps.errors.asset_name == undefined && props.formikProps.errors.door_number == undefined && props.formikProps.errors.address_hint == undefined && props.formikProps.errors.street == undefined && props.formikProps.errors.nagar == undefined && props.formikProps.errors.city == undefined && props.formikProps.errors.state == undefined && props.formikProps.errors.pincode == undefined && props.formikProps.errors.landmark == undefined) {

@@ -6,7 +6,6 @@ import { isNumber } from '../../../commonFunctions/Validations';
 
 
 function AssetAddFormWizzardStep7(props) {
-    window.scrollTo(0, 0);
     const handleNext = async () => {
         props.formikProps.values.rooms.map((value, key) => {
             console.log(value, key);

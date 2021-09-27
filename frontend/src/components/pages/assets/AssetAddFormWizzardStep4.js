@@ -5,7 +5,6 @@ import { ErrorMessage } from 'formik';
 
 
 function AssetAddFormWizzardStep4(props) {
-    window.scrollTo(0, 0);
     const handleNext = async () => {
         await props.formikProps.setTouched({['asset_main_image']:true, ['asset_size_in_width']:true, ['asset_size_in_width_type']:true, ['asset_size_in_length']:true, ['asset_size_in_length_type']:true, ['asset_notes_by_owner']:true});
         console.log(props);

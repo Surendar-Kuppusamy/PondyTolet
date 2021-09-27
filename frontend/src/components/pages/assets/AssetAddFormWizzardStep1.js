@@ -2,11 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FieldArray, ErrorMessage } from 'formik';
 
 function AssetAddFormWizzardStep1(props) {
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    },[])
-
+    
     const handleNext = async () => {
         await props.formikProps.setTouched({['type_of_asset']:true, ['asset_for']:true});
         if(props.formikProps.errors.type_of_asset == undefined && props.formikProps.errors.asset_for == undefined) {

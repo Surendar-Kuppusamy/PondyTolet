@@ -3,7 +3,6 @@ import Dropdown from 'react-dropdown';
 import { ErrorMessage } from 'formik';
 
 function AssetAddFormWizzardStep3(props) {
-    window.scrollTo(0, 0);
     const handleNext = async () => {
         await props.formikProps.setTouched({['number_of_rooms']:true, ['bhk']:true, ['age_of_asset']:true, ['age_of_asset_type']:true});
         console.log(props);

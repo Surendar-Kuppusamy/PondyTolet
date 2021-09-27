@@ -425,7 +425,7 @@ function AddAssets(props) {
                                 {JSON.stringify(values)}
                             </pre>
                         
-                            <StepWizard transitions={custom}>
+                            <StepWizard transitions={custom} onStepChange={() => window.scrollTo(0, 0)}>
                                 <AssetAddFormWizzardStep1 formikProps={{ errors, values, field, touched, setTouched, validateField, setFieldTouched, setValues, setFieldValue, handleChange, handleBlur }} all_options={assetState.alloptions} />
                                 <AssetAddFormWizzardStep2 formikProps={{ errors, values, field, touched, setTouched, validateField, setFieldTouched, setValues, setFieldValue, handleChange, handleBlur }} all_options={assetState.alloptions} customStyles={customStyles} onSelectChange={onSelectChange} onSelectMultipleChange={onSelectMultipleChange} />
                                 { (values.type_of_asset == 2 || values.type_of_asset == 1)/* 2 => 'Appartment', 1 => 'House' */ &&

@@ -8,14 +8,14 @@ const UserSchema = new Schema({
         trim: true,
         required: [true, 'First Name required.'],
         minLength: [3, 'First Name must have minimum 3 characters.'],
-        maxLength: [30, 'Maximum character for first name should be 30 characters.']
+        maxLength: [50, 'Maximum character for first name should be 30 characters.']
     },
     last_name:  {
         type: String,
         trim: true,
         required: [true, 'Last Name required.'],
         minLength: [3, 'Last Name must have minimum 3 characters.'],
-        maxLength: [30, 'Maximum character for last name should be 30 characters.']
+        maxLength: [50, 'Maximum character for last name should be 30 characters.']
     },
     dob:  {
         type: Date,
@@ -27,7 +27,7 @@ const UserSchema = new Schema({
         trim: true,
         unique: true,
         required: [true, 'Email required.'],
-        validate: {
+        /* validate: {
             validator: function(value) {
                 return new Promise((resolve, reject) => {
                     const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -35,7 +35,7 @@ const UserSchema = new Schema({
                 });
             },
             message: props => `${props.value} is not a valid emial!`
-        }
+        } */
     },
     password:  {
         type: String,
@@ -46,7 +46,7 @@ const UserSchema = new Schema({
         type: Number,
         trim: true,
         required: [true, 'Mobile number required.'],
-        validate: {
+        /* validate: {
             validator: function(value) {
                 return new Promise((resolve, reject) => {
                     if(value.toString().length != 10) {
@@ -57,7 +57,7 @@ const UserSchema = new Schema({
                 });
             },
             message: 'Mobile number must be 10 digits'
-        }
+        } */
     },
     telephone_number:  {
         type: String,

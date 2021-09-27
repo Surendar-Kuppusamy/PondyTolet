@@ -6,7 +6,6 @@ import LoadingIndicator from '../common/LoadingIndicator';
 
 
 function AssetAddFormWizzardStep5(props) {
-    window.scrollTo(0, 0);
     const handleNext = async () => {
         await props.formikProps.setTouched({['who_can_contact']:true, ['advance_amount_for_asset']:true, ['monthly_rent_for_asset']:true, ['lease_amount_for_asset']:true, ['lease_period_for_asset']:true, ['lease_period_for_asset_type']:true, ['asset_price']:true});
         if(props.formikProps.errors.who_can_contact == undefined && props.formikProps.errors.advance_amount_for_asset == undefined && props.formikProps.errors.monthly_rent_for_asset == undefined && props.formikProps.errors.lease_amount_for_asset == undefined && props.formikProps.errors.lease_period_for_asset == undefined && props.formikProps.errors.lease_period_for_asset_type == undefined && props.formikProps.errors.asset_price == undefined) {

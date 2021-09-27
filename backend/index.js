@@ -21,7 +21,6 @@ connectDB();
 
 configLogs(app);
 
-
 // for parsing application/xwww-form-urlencoded// for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
