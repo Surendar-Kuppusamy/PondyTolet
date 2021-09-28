@@ -75,9 +75,14 @@ function AssetAddFormWizzardStep6(props) {
             />
 
             <p>
-                <button type="button" className="btn btn-success" onClick={handleNext}>Next Step</button>
+                {/* <button type="button" className="btn btn-success" onClick={handleNext}>Next Step</button> */}
                 <button type="button" className="btn btn-info" onClick={props.previousStep}>Previous</button>
             </p>
+            {/* <div className="mb-2 mt-2">
+                <button className="btn btn-primary" type="submit">
+                    Submit
+                </button>
+            </div> */}
         </div>
     );
 }

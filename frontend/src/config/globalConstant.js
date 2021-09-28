@@ -71,13 +71,30 @@ export const ASSET_STATUS_NOW_OPTIONS = [
 ];
 
 export const LIKE_OR_DISLIKE_OPTIONS = [
-    { value: 'Like', label: 'Like' },
-    { value: 'Dislike', label: 'Dislike' }
+    { value: 1, label: 'Like' },
+    { value: 2, label: 'Dislike' }
 ];
 
 export const IS_PROPOSAL_CANCELLED_OPTIONS = [
-    { value: 'Not Cancelled', label: 'Not Cancelled' },
-    { value: 'Cancelled', label: 'Cancelled' }
+    { value: 1, label: 'Not Cancelled' },
+    { value: 2, label: 'Cancelled' }
 ];
+
+export const BULK_DATA_INSERT_TYPES = [
+    { value: 1, label: 'City Options' },
+    { value: 2, label: 'State Options' },
+    { value: 3, label: 'Who Can Contact Options' }
+];
+
+export const CUSTOM_STYLES = {
+    singleValue: (provided, state) => {
+      const color = state.selectProps.isLoading ? 'white' : 'black';
+      return { ...provided, color };
+    },
+    valueContainer: (provided, state) => {
+        const color = state.selectProps.isLoading ? 'white' : 'black';
+        return { ...provided, color };
+      }
+}
 
 export const ERROR_RESPONSE = { status: 'error', message: 'Something went wrong.'}

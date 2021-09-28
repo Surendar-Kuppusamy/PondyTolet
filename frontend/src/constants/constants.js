@@ -20,3 +20,7 @@ export const USER_LOADER = 'USER_LOADER';
 export const SIGNUP_FORM = 'SIGNUP_FORM';
 export const SIGNUP_RESULT = 'SIGNUP_RESULT';
 export const SIGNUP_ERROR = 'SIGNUP_ERROR';
+export const ASSET_FORM = 'ASSET_FORM';
+export const ASSET_RESULT = 'ASSET_RESULT';
+export const ASSET_ERROR = 'ASSET_ERROR';
+export const ASSET_LOADER = 'ASSET_LOADER';

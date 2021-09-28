@@ -17,7 +17,7 @@ function AssetAddFormWizzardStep4(props) {
     return (
         <div>
             <div className="mb-3">
-                <FileUploadComponent maxFiles="1" fileTypes=".jpeg,.png" setField={props.formikProps} fieldName="asset_main_image" />
+                {/* <FileUploadComponent maxFiles="1" fileTypes=".jpeg,.png" setField={props.formikProps} fieldName="asset_main_image" /> */}
 
                 {/* <label htmlFor="asset_main_image" className="form-label">Asset Image</label>
                 <input id="asset_main_image" name="asset_main_image" type="file" onChange={(event) => { props.formikProps.setFieldValue("asset_main_image", event.currentTarget.files[0]); }} className="form-control" />

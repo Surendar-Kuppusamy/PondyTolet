@@ -9,8 +9,10 @@ import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import { parse, isDate } from "date-fns";
 import StepWizard from "react-step-wizard";
-import { SITE_LOADER, ALL_OPTIONS, SET_WHO_CAN_CONTACT_OPTIONS } from '../../../constants/constants';
-import { getAllOptions, createAsset } from '../../../actions/assetActions';
+import { toast } from 'react-toastify';
+import { ASSET_FORM, ASSET_LOADER } from '../../../constants/constants';
+import { createAsset, getAllOptions } from '../../../actions/assetActions';
+import Loader from '../../Loader';
 import AssetAddFormWizzardStep1 from './AssetAddFormWizzardStep1';
 import AssetAddFormWizzardStep2 from './AssetAddFormWizzardStep2';
 import AssetAddFormWizzardStep3 from './AssetAddFormWizzardStep3';
@@ -65,13 +67,18 @@ const mapDispatchToProps = dispatch => {
     return {
         getoptions: () => {
             dispatch(getAllOptions());
+        },
+        createNewAsset: () => {
+            dispatch(createAsset());
         }
     }   
 }
 
 function AddAssets(props) {
-    /* const dispatch = useDispatch();
-    dispatch({type: ALL_OPTIONS, payload: {'te': 'function'}});
+    const dispatch = useDispatch();
+    const assetState = useSelector((state) => state.assetState)
+    const { asset_loader, asset_result } = assetState;
+    /* dispatch({type: ALL_OPTIONS, payload: {'te': 'function'}});
     const assetState = useSelector((state) => state.assetState) */
 
     const customStyles = {
@@ -85,17 +92,24 @@ function AddAssets(props) {
           }
     }
 
-    const assetState = useSelector((state) => state.assetState)
-    console.log(assetState);
+    useEffect(() => {
+        if(Object.keys(asset_result).length != 0) {
+            console.log('Result ===>'+asset_result);
+            if(asset_result.status == 'error') {
+                toast.error(asset_result.message, {theme: "colored"});
+            } else if(asset_result.status == 'success') {
+                toast.success(asset_result.message, {theme: "colored"});
+                //history.push("/home");
+            }
+        }
+    },[asset_result])
+
+    
     
     if(Object.keys(props.assetState.alloptions).length == 0) {
         props.getoptions();
         console.log(assetState);
     }
-
-    useEffect(() => {
-        
-    },[])
 
     const onSelectChange = (e, field, values, setFieldValue, loader) => {
         var loader = field+'_is_loading';
@@ -410,44 +424,49 @@ function AddAssets(props) {
     }
 
     const onSubmit = (values) => {
-        console.log(values);
-        props.createAsset(values);
+        dispatch({
+            type: ASSET_FORM,
+            payload: values
+        });
+        props.createNewAsset(values);
     };
 
     return (
-        <section id="AddAssets">
-            <h3>Add Asset</h3>
-            <div className="container">
-                <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
-                    {({ errors, values, field, touched, setTouched, validateField, setFieldTouched, setValues, setFieldValue, handleChange, handleBlur }) => (
-                        <Form>
-                            <pre>
-                                {JSON.stringify(values)}
-                            </pre>
-                        
-                            <StepWizard transitions={custom} onStepChange={() => window.scrollTo(0, 0)}>
-                                <AssetAddFormWizzardStep1 formikProps={{ errors, values, field, touched, setTouched, validateField, setFieldTouched, setValues, setFieldValue, handleChange, handleBlur }} all_options={assetState.alloptions} />
-                                <AssetAddFormWizzardStep2 formikProps={{ errors, values, field, touched, setTouched, validateField, setFieldTouched, setValues, setFieldValue, handleChange, handleBlur }} all_options={assetState.alloptions} customStyles={customStyles} onSelectChange={onSelectChange} onSelectMultipleChange={onSelectMultipleChange} />
-                                { (values.type_of_asset == 2 || values.type_of_asset == 1)/* 2 => 'Appartment', 1 => 'House' */ &&
-                                    <AssetAddFormWizzardStep3 formikProps={{ errors, values, field, touched, setTouched, validateField, setFieldTouched, setValues, setFieldValue, handleChange, handleBlur }} all_options={assetState.alloptions} onClickDMYTypes={onClickDMYTypes} />
-                                }
-                                <AssetAddFormWizzardStep4 formikProps={{ errors, values, field, touched, setTouched, validateField, setFieldTouched, setValues, setFieldValue, handleChange, handleBlur }} all_options={assetState.alloptions} onClickDMYTypes={onClickDMYTypes} />
-                                <AssetAddFormWizzardStep5 formikProps={{ errors, values, field, touched, setTouched, validateField, setFieldTouched, setValues, setFieldValue, handleChange, handleBlur }} all_options={assetState.alloptions} customStyles={customStyles} onSelectChange={onSelectChange} onSelectMultipleChange={onSelectMultipleChange} onClickDMYTypes={onClickDMYTypes} />
-                                <AssetAddFormWizzardStep6 formikProps={{ errors, values, field, touched, setTouched, validateField, setFieldTouched, setValues, setFieldValue, handleChange, handleBlur }} all_options={assetState.alloptions} customStyles={customStyles} onSelectChange={onSelectChange} onSelectMultipleChange={onSelectMultipleChange} onClickDMYTypes={onClickDMYTypes} onDobDateChange={onDobDateChange} />
-                                { (values.type_of_asset == 2 || values.type_of_asset == 1)/* 2 => 'Appartment', 1 => 'House' */ &&
-                                    <AssetAddFormWizzardStep7 formikProps={{ errors, values, field, touched, setTouched, validateField, setFieldTouched, setValues, setFieldValue, handleChange, handleBlur }} all_options={assetState.alloptions} customStyles={customStyles} onSelectChange={onSelectChange} onSelectMultipleChange={onSelectMultipleChange} onClickDMYTypes={onClickDMYTypes} onDobDateChange={onDobDateChange} />
-                                }
-                            </StepWizard>
-                            <div className="mb-2 mt-2">
-                                <button className="btn btn-primary" type="submit">
-                                    Submit
-                                </button>
-                            </div>
-                        </Form>
-                    )}
-                </Formik>
-            </div>
-        </section>
+            <section id="AddAssets">
+                {asset_loader == false ? 
+                <div>
+                    <h3>Add Asset</h3>
+                    <div className="container">
+                        <Formik initialValues={initialValues} /* validationSchema={validationSchema} */ onSubmit={onSubmit}>
+                            {({ errors, values, field, touched, setTouched, validateField, setFieldTouched, setValues, setFieldValue, handleChange, handleBlur }) => (
+                                <Form>
+                                    <pre>
+                                        {JSON.stringify(values)}
+                                    </pre>
+                                
+                                    <StepWizard transitions={custom} onStepChange={() => window.scrollTo(0, 0)}>
+                                        <AssetAddFormWizzardStep1 formikProps={{ errors, values, field, touched, setTouched, validateField, setFieldTouched, setValues, setFieldValue, handleChange, handleBlur }} all_options={assetState.alloptions} />
+                                        <AssetAddFormWizzardStep2 formikProps={{ errors, values, field, touched, setTouched, validateField, setFieldTouched, setValues, setFieldValue, handleChange, handleBlur }} all_options={assetState.alloptions} customStyles={customStyles} onSelectChange={onSelectChange} onSelectMultipleChange={onSelectMultipleChange} />
+                                        { (values.type_of_asset == 2 || values.type_of_asset == 1)/* 2 => 'Appartment', 1 => 'House' */ &&
+                                            <AssetAddFormWizzardStep3 formikProps={{ errors, values, field, touched, setTouched, validateField, setFieldTouched, setValues, setFieldValue, handleChange, handleBlur }} all_options={assetState.alloptions} onClickDMYTypes={onClickDMYTypes} />
+                                        }
+                                        <AssetAddFormWizzardStep4 formikProps={{ errors, values, field, touched, setTouched, validateField, setFieldTouched, setValues, setFieldValue, handleChange, handleBlur }} all_options={assetState.alloptions} onClickDMYTypes={onClickDMYTypes} />
+                                        <AssetAddFormWizzardStep5 formikProps={{ errors, values, field, touched, setTouched, validateField, setFieldTouched, setValues, setFieldValue, handleChange, handleBlur }} all_options={assetState.alloptions} customStyles={customStyles} onSelectChange={onSelectChange} onSelectMultipleChange={onSelectMultipleChange} onClickDMYTypes={onClickDMYTypes} />
+                                        <AssetAddFormWizzardStep6 formikProps={{ errors, values, field, touched, setTouched, validateField, setFieldTouched, setValues, setFieldValue, handleChange, handleBlur }} all_options={assetState.alloptions} customStyles={customStyles} onSelectChange={onSelectChange} onSelectMultipleChange={onSelectMultipleChange} onClickDMYTypes={onClickDMYTypes} onDobDateChange={onDobDateChange} />
+                                    </StepWizard>
+                                    <div className="mb-2 mt-2">
+                                        <button className="btn btn-primary" type="submit">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </Form>
+                            )}
+                        </Formik>
+                    </div>
+                </div>
+                : <Loader />}
+                
+            </section>
     );
 }
 export default connect(mapStateToProps, mapDispatchToProps)(AddAssets);

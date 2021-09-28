@@ -25,6 +25,9 @@ function Header(props) {
                                 <NavLink className="nav-link" activeStyle={{ color: 'red' }} to="/asset/add">Add Asset</NavLink>
                             </li>
                             <li className="nav-item">
+                                <NavLink className="nav-link" activeStyle={{ color: 'red' }} to="/settings/bulk">Settings</NavLink>
+                            </li>
+                            <li className="nav-item">
                                 <a className="nav-link disabled" href="/home" tabIndex="-1" aria-disabled="true">Disabled</a>
                             </li>
                         </ul>

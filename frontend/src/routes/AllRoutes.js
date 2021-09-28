@@ -10,6 +10,7 @@ const Home = lazy(() => import('../components/pages/Home'));
 const Login = lazy(() => import('../components/pages/login/Login'));
 const Signup = lazy(() => import('../components/pages/signup/Signup'));
 const AddAssets = lazy(() => import('../components/pages/assets/AddAssets'));
+const BulkDataInsert = lazy(() => import('../components/pages/settings/BulkDataInsert'));
 
 function AllRoutes() {
     let location = useLocation();
@@ -31,6 +32,7 @@ function AllRoutes() {
             <Route exact path="/signup" component={() => <Signup />} />
 
             <Route exact path="/asset/add" component={() => <AddAssets />} />
+            <Route exact path="/settings/bulk" component={() => <BulkDataInsert />} />
             
         </Switch>
     );

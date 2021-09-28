@@ -6,11 +6,13 @@ import {
     assetReducer1,
 } from '../reducers/assetReducer';
 import { userReducer } from '../reducers/userReducer';
+import { settingReducer } from '../reducers/settingReducer';
 
 const reducer = combineReducers({
     userState:userReducer,
     assetState: assetReducer,
-    assetState1: assetReducer1
+    assetState1: assetReducer1,
+    settingReducer: settingReducer
 })
 
 const allOptions = localStorage.getItem('allopt')

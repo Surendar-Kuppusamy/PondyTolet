@@ -1,4 +1,5 @@
-import { ALL_OPTIONS } from '../constants/constants';
+import axios from 'axios';
+import { ALL_OPTIONS, ASSET_LOADER, ASSET_RESULT } from '../constants/constants';
 import {
     DAYS_MONTH_YEARS_OPTIONS,
     TYPE_OF_ASSET_OPTIONS,
@@ -12,6 +13,7 @@ import {
     LIKE_OR_DISLIKE_OPTIONS,
     IS_PROPOSAL_CANCELLED_OPTIONS
 } from '../config/globalConstant';
+import { ASSET_CREATE } from '../constants/Apiconstants';
 
 export const getAllOptions = () => async (dispatch) => {
     const all_options = {
@@ -30,6 +32,23 @@ export const getAllOptions = () => async (dispatch) => {
     dispatch({type: ALL_OPTIONS, payload: all_options});
 }
 
-export const createAsset = (assetValues) => async (dispatch) => {
-    console.log(assetValues);
+export const createAsset = (assetValues) => async (dispatch, getState) => {
+    const state = getState();
+    const { asset_form } =  state.assetState;
+    console.log('Actions ===>'+JSON.stringify(asset_form));
+    try {
+        const { data } = await axios.post(
+            ASSET_CREATE,
+            asset_form
+        );
+        dispatch({type:ASSET_RESULT, payload: data});
+    } catch(error) {
+        console.log('Catch Error ==>'+error);
+        let tempData = { status: 'error', message: 'Something went wrong', 'error': error  };
+        dispatch({type:ASSET_RESULT, payload: tempData});
+    }
+    
+    dispatch({
+        type: ASSET_LOADER
+    });
 }
