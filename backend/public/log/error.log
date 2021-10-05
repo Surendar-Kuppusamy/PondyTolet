@@ -1,0 +1,10 @@
+{"message":"{}","level":"error","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"message":"Not authorized, token failed","level":"error","service":"user-service"}
+{"message":"Not authorized, token failed","level":"error","service":"user-service"}
+{"message":"Not authorized, token failed","level":"error","service":"user-service"}
+{"message":"Not authorized, token failed","level":"error","service":"user-service"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","service":"user-service"}
+{"message":"Not authorized, token failed","level":"error","service":"user-service"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","service":"user-service","time":"2021-10-05T19:47:26.698Z"}
+{"message":"Not authorized, token failed","level":"error","service":"user-service","time":"2021-10-05T19:47:26.698Z"}

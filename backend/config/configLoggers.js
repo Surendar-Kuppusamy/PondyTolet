@@ -15,7 +15,7 @@ const configLogs = (app) => {
 const logger = winston.createLogger({
     level: 'info',
     format: winston.format.json(),
-    defaultMeta: { service: 'user-service' },
+    defaultMeta: { service: 'user-service', time: new Date() },
     transports: [
         // - Write all logs with level `error` and below to `error.log`
         new winston.transports.File({ filename: 'public/log/error.log', level: 'error' }),

@@ -98,3 +98,5 @@ export const CUSTOM_STYLES = {
 }
 
 export const ERROR_RESPONSE = { status: 'error', message: 'Something went wrong.'}
+
+export const CUSTOM_ERRORS = ['Not authorized, token failed', 'Not authorized, no token'];

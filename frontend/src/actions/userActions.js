@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { USER_LOADER, SIGNUP_RESULT, SIGNUP_ERROR, LOGIN_FORM_RESULT } from '../constants/constants';
 import { USERSIGNUP, USER_LOGIN } from '../constants/Apiconstants';
+import { CUSTOM_ERRORS } from '../config/globalConstant';
 
 /* const config = {
     headers: {
