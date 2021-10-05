@@ -12,7 +12,7 @@ const reducer = combineReducers({
     userState:userReducer,
     assetState: assetReducer,
     assetState1: assetReducer1,
-    settingReducer: settingReducer
+    settingState: settingReducer
 })
 
 const allOptions = localStorage.getItem('allopt')

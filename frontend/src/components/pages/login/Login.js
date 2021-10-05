@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch, connect } from 'react-redux';
+import { useLocation, useHistory } from 'react-router-dom';
 import { Formik, Form, Field, FieldArray, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { toast } from 'react-toastify';
+import { login } from '../../../actions/userActions';
+import { LOGIN_FORM, LOGIN_FORM_RESULT } from '../../../constants/constants';
 
-function Login() {
+function Login(props) {
+    let location = useLocation();
+    let history = useHistory();
+    const userState = useSelector((state) => state.userState);
+    const { login_form_result } = userState;
+    const dispatch = useDispatch();
+
     const initialValues = {
         email: '',
-        password: '',
-        selectValue:''
+        password: ''
     };
 
     const validationSchema = Yup.object().shape({
@@ -15,13 +25,29 @@ function Login() {
                 .email('Email is invalid'),
         password: Yup.string()
                 .required('Password is required')
-                .min(8, 'Password must have 8 characters')
+                .min(6, 'Password must have 8 characters')
                 .max(50, 'Password must be less than 50 characters')
     });
     
     const onSubmit = (values) => {
-        console.log(values);
+        dispatch({type: LOGIN_FORM, payload: values });
+        props.login();
     }
+
+    useEffect(() => {
+        if(login_form_result != undefined && Object.keys(login_form_result).length > 0) {
+            console.log('Result ===>'+login_form_result);
+            if(login_form_result.status == 'error') {
+                dispatch({type: LOGIN_FORM_RESULT, payload: {}});
+                toast.error(login_form_result.message, {theme: "colored"});
+            } else {
+                dispatch({type: LOGIN_FORM_RESULT, payload: {}});
+                toast.success(login_form_result.message, {theme: "colored"});
+                localStorage.setItem("token", login_form_result.token);
+                history.push("/home");
+            }
+        }
+    },[login_form_result])
     
     return (
         <section id="login">
@@ -54,4 +80,12 @@ function Login() {
     );
 }
 
-export default Login;
+const mapDispatchToProps = dispatch => {
+    return {
+        login: () => {
+            dispatch(login())
+        }
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Login);

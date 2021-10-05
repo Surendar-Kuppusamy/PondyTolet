@@ -8,6 +8,7 @@ import {configLogs} from './config/configLoggers.js';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js'
 import userRoutes from './routers/userRoutes.js'
 import assetRoutes from './routers/assetRoutes.js'
+import settingRoutes from './routers/settingRoutes.js'
 
 dotenv.config({path: './.env'});
 
@@ -34,6 +35,7 @@ app.get('/',(req,res) => {
 
 app.use(userRoutes)
 app.use(assetRoutes)
+app.use(settingRoutes)
 
 app.use(notFound)
 app.use(errorHandler)

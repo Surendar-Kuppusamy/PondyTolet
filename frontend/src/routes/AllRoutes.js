@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { HashRouter as Router, Route, Redirect, Switch, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { SET_SITE_LOADER } from '../constants/constants';
+import PrivateRoutes from '../routes/PrivateRoutes';
 import Loader from '../components/Loader';
 
 
@@ -33,6 +34,8 @@ function AllRoutes() {
 
             <Route exact path="/asset/add" component={() => <AddAssets />} />
             <Route exact path="/settings/bulk" component={() => <BulkDataInsert />} />
+
+            <PrivateRoutes path="/auth/asset/add" component={() => <AddAssets />} />
             
         </Switch>
     );

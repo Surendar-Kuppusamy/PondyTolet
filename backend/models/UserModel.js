@@ -27,7 +27,7 @@ const UserSchema = new Schema({
         trim: true,
         unique: true,
         required: [true, 'Email required.'],
-        /* validate: {
+        validate: {
             validator: function(value) {
                 return new Promise((resolve, reject) => {
                     const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -35,7 +35,7 @@ const UserSchema = new Schema({
                 });
             },
             message: props => `${props.value} is not a valid emial!`
-        } */
+        }
     },
     password:  {
         type: String,
@@ -46,7 +46,7 @@ const UserSchema = new Schema({
         type: Number,
         trim: true,
         required: [true, 'Mobile number required.'],
-        /* validate: {
+        validate: {
             validator: function(value) {
                 return new Promise((resolve, reject) => {
                     if(value.toString().length != 10) {
@@ -56,8 +56,8 @@ const UserSchema = new Schema({
                     }
                 });
             },
-            message: 'Mobile number must be 10 digits'
-        } */
+            message: 'Mobile number must be 10 digits.'
+        }
     },
     telephone_number:  {
         type: String,
@@ -71,6 +71,10 @@ const UserSchema = new Schema({
             },
             message: 'Invalid telephone number.'
         } */
+    },
+    std_code: {
+        type: String,
+        trim: true
     },
     address: {
         type: String,

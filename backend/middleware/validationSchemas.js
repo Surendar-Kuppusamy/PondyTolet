@@ -1,4 +1,6 @@
 import validator from 'express-validator';
+import Users from '../models/UserModel.js';
+
 const { validationResult, checkSchema } = validator;
 
 export const customValidationResult = validationResult.withDefaults({
@@ -10,6 +12,7 @@ export const customValidationResult = validationResult.withDefaults({
         };
     },
 });
+
 
 export const userValidationSchema = {
     first_name: {
@@ -54,15 +57,15 @@ export const userValidationSchema = {
         },
         custom: {
             options: value => {
-                return Promise.resolve(true);
-                //return Promise.reject('Email address already taken');
-                /* return User.find({
+                return Users.find({
                     email: value
                 }).then(user => {
                     if (user.length > 0) {
                         return Promise.reject('Email address already taken')
+                    } else {
+                        return Promise.resolve(true);
                     }
-                }) */
+                })
             }
         }
     },
@@ -95,6 +98,8 @@ export const userValidationSchema = {
             options: (value, { req, location, path }) => {
                 if(req.body.password != value) {
                     return Promise.reject('Password and confirm password should be match');
+                } else {
+                    return Promise.resolve(true);
                 }
             }
         }
@@ -102,7 +107,10 @@ export const userValidationSchema = {
     dob: {
         trim: true,
         isDate: {
-            options: { format: 'YYYY-MM-DD' },
+            options: {
+                format: 'YYYY-MM-DD',
+                delimiters: ['/', '-']
+            },
             errorMessage: "DOB date is invalid."
         },
         isBefore: {
@@ -112,42 +120,55 @@ export const userValidationSchema = {
     },
     mobile_number: {
         trim: true,
-        isNumeric: {
-            errorMessage: "Mobile number should be numeric."
-        },
-        isInt: {
-            options: {
-                min: 10,
-                max: 10,
-                errorMessage: "Mobile number should be 10 digits."
+        //toInt: true,
+        /* customSanitizer: {
+            options: (value, { req, location, path }) => {
+                let sanitizedValue;
+                sanitizedValue = parseInt(value);
+                return sanitizedValue;
             }
+        }, */
+        /* isNumeric: {
+            errorMessage: "Mobile number should be numeric."
+        }, */
+        isLength: {
+            options: {
+                min: 10
+            },
+            errorMessage: "Mobile number should be 10 digits."
+        },
+        isLength: {
+            options: {
+                max: 10
+            },
+            errorMessage: "Mobile number should be 10 digits."
         }
     },
     std_code: {
         trim: true,
-        isNumeric: {
+        /* isNumeric: {
             errorMessage: "STD code number should be numeric."
-        },
-        isInt: {
+        }, */
+        /* isLength: {
             options: {
                 min: 3,
-                max: 5,
-                errorMessage: "STD code should be between 3 to 5 digits."
-            }
-        }
+                max: 5  
+            },
+            errorMessage: "STD code should be between 3 to 5 digits."
+        } */
     },
     telephone_number: {
         trim: true,
-        isNumeric: {
+        /* isNumeric: {
             errorMessage: "Telephone number should be numeric."
-        },
-        isInt: {
+        }, */
+        /* isLength: {
             options: {
                 min: 6,
-                max: 10,
-                errorMessage: "Telephone number should be between 6 to 10 digits."
-            }
-        }
+                max: 10
+            },
+            errorMessage: "Telephone number should be between 6 to 10 digits."
+        } */
     },
     address: {
         trim: true,
@@ -504,6 +525,65 @@ export const assetValidationSchema = {
                     }
                 }
             }
+        }
+    }
+}
+
+export const loginValidationSchema = {
+    'cities.*': {
+        trim: true,
+        custom: {
+            options: (value, { req, location, path }) => {
+                if(req.body.type_of_asset == 1 || req.body.type_of_asset == 2) {    //1 => 'House', 2 => 'Appartment'
+                    if(value == '') {
+                        return Promise.reject('Any one of the city is required.');
+                    } else if(value.length < 3) {
+                        return Promise.reject('Any one of the city length is less than three characters.');
+                    } else {
+                        return Promise.resolve(true);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+export const createCityValidationSchema = {
+    email: {
+        trim: true,
+        notEmpty: {
+            errorMessage: "Email is required."
+        },
+        isEmail: {
+            errorMessage: "Invalid email address."
+        },
+        custom: {
+            options: (value, { req, location, path }) => {
+                return Users.find({
+                    email: value,
+                    password: req.body.password
+                }).then(user => {
+                    if (user.length > 0) {
+                        return Promise.resolve(true);
+                    } else {
+                        return Promise.reject('Invalid credential.');
+                    }
+                })
+            }
+        }
+    },
+    password: {
+        trim: true,
+        notEmpty: {
+            errorMessage: "Password is required."
+        },
+        isLength: {
+            options: {
+                min: 6,
+                max: 50
+            },
+            errorMessage: "Password characters must be greater then 6 and less then 50"
         }
     }
 }

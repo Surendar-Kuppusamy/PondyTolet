@@ -18,7 +18,7 @@ function AssetAddFormWizzardStep7(props) {
 
     return (
         <div>
-            
+            <h4>Step: {props.currentStep}</h4>            
             <FieldArray
                 name="rooms"
                 render={arrayHelpers => (

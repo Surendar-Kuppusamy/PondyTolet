@@ -10,8 +10,9 @@ import 'react-dropdown/style.css';
 import { parse, isDate } from "date-fns";
 import StepWizard from "react-step-wizard";
 import { toast } from 'react-toastify';
-import { ASSET_FORM, ASSET_LOADER } from '../../../constants/constants';
+import { ASSET_FORM, ASSET_LOADER, NEW_CITY } from '../../../constants/constants';
 import { createAsset, getAllOptions } from '../../../actions/assetActions';
+import { createCity } from '../../../actions/settingActions';
 import Loader from '../../Loader';
 import AssetAddFormWizzardStep1 from './AssetAddFormWizzardStep1';
 import AssetAddFormWizzardStep2 from './AssetAddFormWizzardStep2';
@@ -68,6 +69,9 @@ const mapDispatchToProps = dispatch => {
         getoptions: () => {
             dispatch(getAllOptions());
         },
+        addCity: () => {
+            dispatch(createCity());
+        },
         createNewAsset: () => {
             dispatch(createAsset());
         }
@@ -118,6 +122,11 @@ function AddAssets(props) {
             //Save and select
             assetState.alloptions.city_options.push({'label': 'Loading', 'value': 0});
             setFieldValue(field, 0);
+            if(field == 'city') {
+                dispatch({type:NEW_CITY, payload: e.value});
+                props.addCity(e.value);
+            }
+            
             setTimeout(function() {
                 assetState.alloptions.city_options.unshift({'label': e.value, 'value': e.value});
                 setFieldValue(loader, false);

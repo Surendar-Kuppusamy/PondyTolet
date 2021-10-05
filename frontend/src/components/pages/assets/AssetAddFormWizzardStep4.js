@@ -16,6 +16,7 @@ function AssetAddFormWizzardStep4(props) {
 
     return (
         <div>
+            <h4>Step: {props.currentStep}</h4>
             <div className="mb-3">
                 {/* <FileUploadComponent maxFiles="1" fileTypes=".jpeg,.png" setField={props.formikProps} fieldName="asset_main_image" /> */}
 

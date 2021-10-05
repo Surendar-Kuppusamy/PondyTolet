@@ -17,7 +17,7 @@ function AssetAddFormWizzardStep6(props) {
 
     return (
         <div>
-            
+            <h4>Step: {props.currentStep}</h4>    
             <div className="mb-3">
                 <label htmlFor="dob" className="form-label">Asset available on from:</label>
                 <div>

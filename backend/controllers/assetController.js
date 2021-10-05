@@ -1,6 +1,6 @@
 import asyncHandler from 'express-async-handler'
 import validator from 'express-validator';
-import  Asset from '../models/AssetModel';
+import Assets from '../models/AssetModel.js';
 import { logger } from '../config/configLoggers.js';
 import { customValidationResult } from '../middleware/validationSchemas.js';
 

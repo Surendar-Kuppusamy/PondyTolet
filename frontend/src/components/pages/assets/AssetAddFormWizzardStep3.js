@@ -13,6 +13,7 @@ function AssetAddFormWizzardStep3(props) {
 
     return (
         <div>
+            <h4>Step: {props.currentStep}</h4>
             <div className="mb-3">
                 <label htmlFor="number_of_rooms" className="form-label">Number of rooms:</label>
                 <input type="number" className={'form-control' + (props.formikProps.errors.number_of_rooms && props.formikProps.touched.number_of_rooms ? ' is-invalid' : '')} min="0" id="number_of_rooms" name="number_of_rooms" placeholder="Enter number of rooms" onChange={props.formikProps.handleChange} onBlur={props.formikProps.handleBlur} value={props.formikProps.values.number_of_rooms} />

@@ -15,6 +15,7 @@ function AssetAddFormWizzardStep5(props) {
 
     return (
         <div>
+            <h4>Step: {props.currentStep}</h4>
             <div className="my-2">
                 <div className="my-2">
                     Who can contacts you:

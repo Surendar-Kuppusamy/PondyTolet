@@ -25,6 +25,9 @@ function Header(props) {
                                 <NavLink className="nav-link" activeStyle={{ color: 'red' }} to="/asset/add">Add Asset</NavLink>
                             </li>
                             <li className="nav-item">
+                                <NavLink className="nav-link" activeStyle={{ color: 'red' }} to="/auth/asset/add">Auth Add Asset</NavLink>
+                            </li>
+                            <li className="nav-item">
                                 <NavLink className="nav-link" activeStyle={{ color: 'red' }} to="/settings/bulk">Settings</NavLink>
                             </li>
                             <li className="nav-item">

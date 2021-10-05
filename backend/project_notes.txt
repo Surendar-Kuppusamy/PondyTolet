@@ -10,3 +10,4 @@ npm i winston
 npm i mongoose
 npm i express-validator
 npm install cors
+npm i jsonwebtoken

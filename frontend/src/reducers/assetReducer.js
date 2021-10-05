@@ -4,7 +4,8 @@ import {
     ASSET_LOADER,
     ALL_OPTIONS,
     USER_LOGIN_FAIL,
-    USER_LOGOUT
+    USER_LOGOUT,
+    ASSET_RESULT
 } from '../constants/constants';
 
 
@@ -30,6 +31,10 @@ export const assetReducer = (state = initialState, action) => {
         case ASSET_FORM: {
             let assetForm = action.payload;
             return {...state, asset_form: assetForm, asset_loader: true }
+        }
+        case ASSET_RESULT: {
+            let assetForm = action.payload;
+            return {...state, asset_result:action.payload, asset_loader: false }
         }
         case ALL_OPTIONS: {
             let alloptions = action.payload;

@@ -9,12 +9,12 @@ const AssetSchema = new Schema({
         ref: 'Users'
     },
     type_of_asset: {        //type_of_asset(1 - House, 2 - Appartment, 3 - Store, 4 - Koddon, 5 - Land)
-        type: INT,
+        type: Number,
         required: [true, 'Asset type required.'],
         ref: 'TypeOfAssets'
     },
     asset_for: {        //asset_for(1 - Rent, 2 - for lease, 3 - "Sale")
-        type: INT,
+        type: Number,
         required: [true, 'Asset for required.'],
         enum: {
             values: [1, 2, 3],
@@ -208,4 +208,5 @@ const AssetSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model("Assets", AssetSchema);
+const Assets = mongoose.model("Assets", AssetSchema);
+export default Assets;

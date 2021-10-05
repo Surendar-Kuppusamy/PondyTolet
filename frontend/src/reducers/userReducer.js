@@ -6,7 +6,9 @@ import {
     USER_LOGOUT,
     SIGNUP_FORM,
     SIGNUP_RESULT,
-    SIGNUP_ERROR
+    SIGNUP_ERROR,
+    LOGIN_FORM,
+    LOGIN_FORM_RESULT
 } from '../constants/constants';
 
 
@@ -35,7 +37,12 @@ export const userReducer = (state = initialState, action) => {
         case SIGNUP_ERROR: {
             return {...state, signup_error:action.payload, user_loader: false }
         }
-        
+        case LOGIN_FORM: {
+            return {...state, login_form:action.payload, user_loader: true }
+        }
+        case LOGIN_FORM_RESULT: {
+            return {...state, login_form_result:action.payload, user_loader: false }
+        }
         case USER_LOADER: {
             return {...state, user_loader:action.payload }
         }

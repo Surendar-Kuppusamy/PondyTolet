@@ -14,8 +14,9 @@ function AssetAddFormWizzardStep2(props) {
 
     return (
         <div>
+            <h4>Step: {props.currentStep}</h4>
             <h4>
-                {props.formikProps.values.type_of_asset}
+            {props.all_options.type_of_asset_options[props.formikProps.values.type_of_asset - 1].label}
             </h4>
 
             <div className="mb-3">

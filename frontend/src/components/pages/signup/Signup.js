@@ -12,15 +12,6 @@ import { USER_LOADER, SIGNUP_FORM } from '../../../constants/constants';
 import { isNumber } from '../../../commonFunctions/Validations';
 import FileUploadComponent from '../common/FileUploadComponent';
 
-const mapDispatchToProps = dispatch => {
-    return {
-        register: () => {
-            dispatch(signup());
-        }
-    }   
-}
-
-
 
 function Signup(props) {
     let location = useLocation();
@@ -95,7 +86,10 @@ function Signup(props) {
 
     const onDobDateChange = (e, field, values, setFieldValue) => {
         console.log(e.getDate(), e.getFullYear(), e.getMonth());
-        var dobDate = e.getFullYear()+'-'+(e.getMonth() + 1)+'-'+e.getDate();
+        let selYear = e.getFullYear();
+        let selMonth = (e.getMonth() < 9 ? '0' : '') + (e.getMonth() + 1);
+        let selDate = (e.getDate() < 10 ? '0' : '') + e.getDate();
+        var dobDate = selYear+'-'+selMonth+'-'+selDate;
         console.log(dobDate);
         setFieldValue(field, dobDate);
     };
@@ -121,15 +115,15 @@ function Signup(props) {
             {userState.user_loader == true ? <Loader /> : <div>
                 <h3 className="text-center">Signup Page</h3>
                 <div className="container">
-                    <Formik initialValues={initialValues} /* validationSchema={validationSchema}  */ onSubmit={onSubmit}>
+                    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
                         {(props) => (
                             <Form>
                                 <pre>
                                     {JSON.stringify(props.values)}
                                 </pre>
-                                <div className="mb-2">
+                                {/* <div className="mb-2">
                                     <FileUploadComponent maxFiles="4" fileTypes=".jpeg,.png" setField={props} fieldName={'files'} />
-                                </div>
+                                </div> */}
                                 <div className="mb-3">
                                     <label htmlFor="first_name" className="form-label">First Name</label>
                                     <input type="text" className={'form-control' + (props.errors.first_name && props.touched.first_name ? ' is-invalid' : '')} id="first_name" name="first_name" placeholder="Enter your first name" onChange={props.handleChange} onBlur={props.handleBlur} value={props.values.first_name}  />
@@ -159,7 +153,7 @@ function Signup(props) {
                                     <label htmlFor="dob" className="form-label">DOB</label>
                                     {/* <input type="text" className="form-control" id="dob" name="dob" placeholder="Enter your DOB" onChange={handleChange} onBlur={handleBlur} /> */}
                                     <div>
-                                        <DatePicker id="dob" className={'form-control' + (props.errors.dob && props.touched.dob ? ' is-invalid' : '')} name="dob" maxDate={subYears(new Date(), 17)} onChange={e => onDobDateChange(e, 'dob', props.values, props.setFieldValue)} value={props.values.dob} />
+                                        <DatePicker id="dob" className={'form-control' + (props.errors.dob && props.touched.dob ? ' is-invalid' : '')} name="dob" maxDate={subYears(new Date(), 17)} onChange={e => onDobDateChange(e, 'dob', props.values, props.setFieldValue)} value={props.values.dob} peekNextMonth showMonthDropdown showYearDropdown dropdownMode="select" />
                                     </div>
                                     <ErrorMessage name="dob" component="span" className="text-danger" />
                                 </div>
@@ -211,6 +205,14 @@ function Signup(props) {
             }
         </section>
     );
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        register: () => {
+            dispatch(signup());
+        }
+    }   
 }
 
 export default connect(null, mapDispatchToProps)(Signup);
