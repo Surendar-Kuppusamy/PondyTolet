@@ -24,3 +24,9 @@ npm install react-step-wizard
 npm i react-dropzone
 npm i axios
 npm i react-toastify
+npm i react-paginate
+npm i @fortawesome/react-fontawesome
+npm i --save @fortawesome/fontawesome-svg-core
+npm install --save @fortawesome/free-solid-svg-icons
+npm i react-modal
+npm i react-confirm-alert

@@ -49,3 +49,15 @@ https://codedaily.io/tutorials/Yup-Date-Validation-with-Custom-Transform
 
 For solve the default option for dropdown
 https://github.com/fraserxu/react-dropdown/blob/master/example/objectArrayExample.js
+
+
+Reference link for font awesome
+https://www.npmjs.com/package/@fortawesome/react-fontawesome
+https://fontawesome.com/v5.15/icons?d=gallery&p=2&q=tick&m=free
+
+
+Reference modal 
+https://www.npmjs.com/package/react-modal
+
+Reference Alert Box
+https://www.npmjs.com/package/react-confirm-alert

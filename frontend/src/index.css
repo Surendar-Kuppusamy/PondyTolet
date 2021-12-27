@@ -1,6 +1,8 @@
+@import 'react-confirm-alert/src/react-confirm-alert.css';
 @import "../node_modules/react-toastify/dist/ReactToastify.css";
 @import "../node_modules/bootstrap/dist/css/bootstrap.css";
 @import "../node_modules/react-datepicker/dist/react-datepicker.css";
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

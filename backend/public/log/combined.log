@@ -16,3 +16,154 @@
 {"message":"Not authorized, token failed","level":"error","service":"user-service"}
 {"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","service":"user-service","time":"2021-10-05T19:47:26.698Z"}
 {"message":"Not authorized, token failed","level":"error","service":"user-service","time":"2021-10-05T19:47:26.698Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","service":"user-service","time":"2021-10-16T18:04:19.524Z"}
+{"message":"Not authorized, token failed","level":"error","service":"user-service","time":"2021-10-16T18:04:19.524Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","service":"user-service","time":"2021-10-16T18:25:21.654Z"}
+{"message":"Not authorized, token failed","level":"error","service":"user-service","time":"2021-10-16T18:25:21.654Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-17T08:45:44.000Z","level":"error","service":"user-service","time":"2021-10-18T18:26:13.530Z"}
+{"message":"Not authorized, token failed","level":"error","service":"user-service","time":"2021-10-18T18:26:13.530Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-17T08:45:44.000Z","level":"error","service":"user-service","time":"2021-10-18T18:26:13.530Z"}
+{"message":"Not authorized, token failed","level":"error","service":"user-service","time":"2021-10-18T18:26:13.530Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-17T08:45:44.000Z","level":"error","service":"user-service","time":"2021-10-18T18:26:13.530Z"}
+{"message":"Not authorized, token failed","level":"error","service":"user-service","time":"2021-10-18T18:26:13.530Z"}
+{"message":"insert_bulk_data is not defined","level":"error","service":"user-service","time":"2021-10-18T19:38:42.650Z"}
+{"message":"insert_bulk_data is not defined","level":"error","service":"user-service","time":"2021-10-18T19:45:57.823Z"}
+{"message":"insert_bulk_data is not defined","level":"error","service":"user-service","time":"2021-10-18T19:48:18.304Z"}
+{"message":"temp is not defined","level":"error","service":"user-service","time":"2021-10-18T20:04:25.402Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-19T03:06:19.000Z","level":"error","service":"user-service","time":"2021-10-20T17:55:33.095Z"}
+{"message":"Not authorized, token failed","level":"error","service":"user-service","time":"2021-10-20T17:55:33.095Z"}
+{"message":"cities is not defined","level":"error","service":"user-service","time":"2021-10-20T18:05:18.822Z"}
+{"message":"cities is not defined","level":"error","service":"user-service","time":"2021-10-20T18:06:05.630Z"}
+{"message":"$city_name is not defined","level":"error","service":"user-service","time":"2021-10-20T18:22:23.183Z"}
+{"message":"city_name is not defined","level":"error","service":"user-service","time":"2021-10-20T18:22:36.325Z"}
+{"message":"The field 'city_name' must be an accumulator object","level":"error","service":"user-service","time":"2021-10-20T18:24:08.053Z"}
+{"message":"city_name is not defined","level":"error","service":"user-service","time":"2021-10-20T18:24:32.834Z"}
+{"message":"The field 'field' must be an accumulator object","level":"error","service":"user-service","time":"2021-10-20T18:24:46.129Z"}
+{"message":"matchedCities[0].cities.split is not a function","level":"error","service":"user-service","time":"2021-10-20T18:37:45.820Z"}
+{"message":"matchedStates is not defined","level":"error","service":"user-service","time":"2021-10-20T18:45:43.420Z"}
+{"message":"Not Found - /asset/add","level":"error","service":"user-service","time":"2021-10-20T18:47:32.703Z"}
+{"message":"Not Found - /asset/add","level":"error","service":"user-service","time":"2021-10-20T18:47:32.703Z"}
+{"message":"Not Found - /asset/add","level":"error","service":"user-service","time":"2021-10-20T18:47:32.703Z"}
+{"message":"Not Found - /get/options","level":"error","service":"user-service","time":"2021-10-20T18:47:32.703Z"}
+{"message":"Not Found - /get/options","level":"error","service":"user-service","time":"2021-10-20T18:47:32.703Z"}
+{"message":"Not Found - /get/options","level":"error","service":"user-service","time":"2021-10-20T18:53:29.578Z"}
+{"message":"Arguments must be aggregate pipeline operators","level":"error","service":"user-service","time":"2021-10-20T19:05:51.192Z"}
+{"message":"Arguments must be aggregate pipeline operators","level":"error","service":"user-service","time":"2021-10-20T19:06:32.220Z"}
+{"message":"Arguments must be aggregate pipeline operators","level":"error","service":"user-service","time":"2021-10-20T19:53:37.629Z"}
+{"message":"Arguments must be aggregate pipeline operators","level":"error","service":"user-service","time":"2021-10-20T19:53:47.466Z"}
+{"message":"Arguments must be aggregate pipeline operators","level":"error","service":"user-service","time":"2021-10-20T19:54:16.395Z"}
+{"message":"Arguments must be aggregate pipeline operators","level":"error","service":"user-service","time":"2021-10-20T19:54:24.566Z"}
+{"message":"Invalid $project :: caused by :: Unknown expression $push","level":"error","service":"user-service","time":"2021-10-20T19:59:02.407Z"}
+{"message":"The field 'data' must be an accumulator object","level":"error","service":"user-service","time":"2021-10-20T20:06:29.107Z"}
+{"message":"The field 'value' must be an accumulator object","level":"error","service":"user-service","time":"2021-10-20T20:06:41.973Z"}
+{"message":"The field 'data' must be an accumulator object","level":"error","service":"user-service","time":"2021-10-20T20:08:39.595Z"}
+{"message":"The field 'value' must be an accumulator object","level":"error","service":"user-service","time":"2021-10-20T20:08:59.957Z"}
+{"message":"The field 'value' must be an accumulator object","level":"error","service":"user-service","time":"2021-10-20T20:10:52.889Z"}
+{"message":"unknown group operator '$count'","level":"error","service":"user-service","time":"2021-10-21T18:09:40.112Z"}
+{"message":"unknown group operator '$count'","level":"error","service":"user-service","time":"2021-10-21T18:11:38.027Z"}
+{"message":"unknown group operator '$count'","level":"error","service":"user-service","time":"2021-10-21T18:12:26.900Z"}
+{"message":"unknown group operator '$count'","level":"error","service":"user-service","time":"2021-10-21T18:13:29.133Z"}
+{"message":"Not Found - /search/options","level":"error","service":"user-service","time":"2021-10-21T19:50:16.926Z"}
+{"message":"Not Found - /get/cities","level":"error","service":"user-service","time":"2021-10-22T17:13:41.045Z"}
+{"message":"Not Found - /get/cities","level":"error","service":"user-service","time":"2021-10-22T17:13:41.045Z"}
+{"message":"Not Found - /get/cities","level":"error","service":"user-service","time":"2021-10-22T17:13:41.045Z"}
+{"message":"Not Found - /get/cities","level":"error","service":"user-service","time":"2021-10-22T17:13:41.045Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T17:56:17.267Z"}
+{"message":"Not authorized, token failed","level":"error","service":"user-service","time":"2021-10-22T17:56:17.267Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:02:50.549Z"}
+{"message":"Not authorized, token failed","level":"error","service":"user-service","time":"2021-10-22T18:02:50.549Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:04:07.344Z"}
+{"message":"Not authorized, token failed","level":"error","service":"user-service","time":"2021-10-22T18:04:07.344Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:06:10.662Z"}
+{"message":"Not authorized, token failed","level":"error","service":"user-service","time":"2021-10-22T18:06:10.662Z"}
+{"message":"Not authorized, token failed","level":"error","service":"user-service","time":"2021-10-22T18:13:14.463Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:16:56.350Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:16:56.350Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:16:56.350Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:16:56.350Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:16:56.350Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:16:56.350Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:22:23.655Z"}
+{"message":"Not authorized, token failed","level":"error","service":"user-service","time":"2021-10-22T18:22:23.655Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:28:27.267Z"}
+{"message":"Token expired.","level":"error","service":"user-service","time":"2021-10-22T18:28:27.267Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:29:48.523Z"}
+{"message":"Token expired.","level":"error","service":"user-service","time":"2021-10-22T18:29:48.523Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:30:05.507Z"}
+{"message":"Token expired.","level":"error","service":"user-service","time":"2021-10-22T18:30:05.507Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:30:37.983Z"}
+{"message":"Token expired.","level":"error","service":"user-service","time":"2021-10-22T18:30:37.983Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:31:13.262Z"}
+{"message":"Token expired.","level":"error","service":"user-service","time":"2021-10-22T18:31:13.262Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:31:13.262Z"}
+{"message":"Token expired.","level":"error","service":"user-service","time":"2021-10-22T18:31:13.262Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:31:13.262Z"}
+{"message":"Token expired.","level":"error","service":"user-service","time":"2021-10-22T18:31:13.262Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:41:10.702Z"}
+{"message":"err is not defined","level":"error","service":"user-service","time":"2021-10-22T18:41:10.702Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:41:10.702Z"}
+{"message":"err is not defined","level":"error","service":"user-service","time":"2021-10-22T18:41:10.702Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:44:14.981Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:44:54.850Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:44:54.850Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:44:54.850Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:53:49.033Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:54:36.953Z"}
+{"message":"Token expired.","level":"error","service":"user-service","time":"2021-10-22T18:54:36.953Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:54:36.953Z"}
+{"message":"Token expired.","level":"error","service":"user-service","time":"2021-10-22T18:54:36.953Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:54:36.953Z"}
+{"message":"Token expired.","level":"error","service":"user-service","time":"2021-10-22T18:54:36.953Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-22T01:47:58.000Z","level":"error","service":"user-service","time":"2021-10-22T18:54:36.953Z"}
+{"message":"Token expired.","level":"error","service":"user-service","time":"2021-10-22T18:54:36.953Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","service":"user-service","time":"2021-10-22T18:54:36.953Z"}
+{"message":"Token expired.","level":"error","service":"user-service","time":"2021-10-22T18:54:36.953Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","service":"user-service","time":"2021-10-22T18:54:36.953Z"}
+{"message":"Token expired.","level":"error","service":"user-service","time":"2021-10-22T18:54:36.953Z"}
+{"message":"Skip value must be non-negative, but received: -10","level":"error","service":"user-service","time":"2021-10-22T20:16:55.272Z"}
+{"message":"Skip value must be non-negative, but received: -10","level":"error","service":"user-service","time":"2021-10-22T20:16:55.272Z"}
+{"message":"Skip value must be non-negative, but received: -10","level":"error","service":"user-service","time":"2021-10-23T02:43:39.957Z"}
+{"message":"Skip value must be non-negative, but received: -10","level":"error","service":"user-service","time":"2021-10-23T02:43:39.957Z"}
+{"message":"Skip value must be non-negative, but received: -10","level":"error","service":"user-service","time":"2021-10-23T02:43:39.957Z"}
+{"message":"Unrecognized pipeline stage name: '$text'","level":"error","service":"user-service","time":"2021-10-23T03:11:45.014Z"}
+{"message":"text index required for $text query","level":"error","service":"user-service","time":"2021-10-23T03:12:55.599Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-23T03:19:49.000Z","level":"error","service":"user-service","time":"2021-10-23T04:34:32.182Z"}
+{"message":"Token expired.","level":"error","service":"user-service","time":"2021-10-23T04:34:32.182Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","service":"user-service","time":"2021-10-23T04:34:32.182Z"}
+{"message":"Token expired.","level":"error","service":"user-service","time":"2021-10-23T04:34:32.182Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","service":"user-service","time":"2021-10-23T04:34:32.182Z"}
+{"message":"Token expired.","level":"error","service":"user-service","time":"2021-10-23T04:34:32.182Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","service":"user-service","time":"2021-10-23T04:34:32.182Z"}
+{"message":"Token expired.","level":"error","service":"user-service","time":"2021-10-23T04:34:32.182Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","service":"user-service","time":"2021-10-23T04:34:32.182Z"}
+{"message":"Token expired.","level":"error","service":"user-service","time":"2021-10-23T04:34:32.182Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","service":"user-service","time":"2021-10-23T04:34:32.182Z"}
+{"message":"Token expired.","level":"error","service":"user-service","time":"2021-10-23T04:34:32.182Z"}
+{"message":"text index required for $text query","level":"error","service":"user-service","time":"2021-10-23T04:34:32.182Z"}
+{"message":"text index required for $text query","level":"error","service":"user-service","time":"2021-10-23T04:34:32.182Z"}
+{"message":"text index required for $text query","level":"error","service":"user-service","time":"2021-10-23T04:34:32.182Z"}
+{"message":"text index required for $text query","level":"error","service":"user-service","time":"2021-10-23T04:46:56.906Z"}
+{"message":"text index required for $text query","level":"error","service":"user-service","time":"2021-10-23T04:46:56.906Z"}
+{"message":"text index required for $text query","level":"error","service":"user-service","time":"2021-10-23T04:48:31.161Z"}
+{"message":"text index required for $text query","level":"error","service":"user-service","time":"2021-10-23T04:48:31.161Z"}
+{"message":"text index required for $text query","level":"error","service":"user-service","time":"2021-10-23T04:50:34.464Z"}
+{"message":"text index required for $text query","level":"error","service":"user-service","time":"2021-10-23T04:54:38.536Z"}
+{"message":"text index required for $text query","level":"error","service":"user-service","time":"2021-10-23T04:54:38.536Z"}
+{"message":"text index required for $text query","level":"error","service":"user-service","time":"2021-10-23T05:07:10.389Z"}
+{"message":"text index required for $text query","level":"error","service":"user-service","time":"2021-10-23T05:15:53.049Z"}
+{"message":"text index required for $text query","level":"error","service":"user-service","time":"2021-10-23T05:15:53.049Z"}
+{"message":"text index required for $text query","level":"error","service":"user-service","time":"2021-10-23T05:19:31.936Z"}
+{"message":"text index required for $text query","level":"error","service":"user-service","time":"2021-10-23T05:39:18.584Z"}
+{"message":"Unrecognized pipeline stage name: '$text'","level":"error","service":"user-service","time":"2021-10-23T05:47:09.938Z"}
+{"message":"Unrecognized pipeline stage name: '$text'","level":"error","service":"user-service","time":"2021-10-23T05:48:56.880Z"}
+{"message":"text index required for $text query","level":"error","service":"user-service","time":"2021-10-23T05:49:29.187Z"}
+{"message":"text index required for $text query","level":"error","service":"user-service","time":"2021-10-23T06:32:16.315Z"}
+{"message":"text index required for $text query","level":"error","service":"user-service","time":"2021-10-23T06:32:59.433Z"}
+{"message":"text index required for $text query","level":"error","service":"user-service","time":"2021-10-23T06:36:29.442Z"}
+{"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2021-10-23T12:40:37.000Z","level":"error","service":"user-service","time":"2021-10-25T17:22:48.974Z"}
+{"message":"Token expired.","level":"error","service":"user-service","time":"2021-10-25T17:22:48.974Z"}
+{"message":"Cast to ObjectId failed for value \"\" (type string) at path \"_id\" for model \"Cities\"","level":"error","service":"user-service","time":"2021-10-25T19:06:14.063Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","service":"user-service","time":"2021-10-27T17:13:13.960Z"}
+{"message":"Token expired.","level":"error","service":"user-service","time":"2021-10-27T17:13:13.960Z"}
+{"message":"Cities.insertOne is not a function","level":"error","service":"user-service","time":"2021-10-27T17:56:48.464Z"}
+{"message":"Not authorized, no token","level":"error","service":"user-service","time":"2021-10-27T18:05:02.981Z"}

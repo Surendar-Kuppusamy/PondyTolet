@@ -8,7 +8,7 @@ const { checkSchema } = validator;
 
 const router = express.Router()
 
-router.route('/login').post(verifyToken, checkSchema(createCityValidationSchema), login)
+router.route('/login').post(checkSchema(createCityValidationSchema), login)
 
 router.route('/signup').post(checkSchema(userValidationSchema), signup)
 

@@ -12,6 +12,12 @@ const Login = lazy(() => import('../components/pages/login/Login'));
 const Signup = lazy(() => import('../components/pages/signup/Signup'));
 const AddAssets = lazy(() => import('../components/pages/assets/AddAssets'));
 const BulkDataInsert = lazy(() => import('../components/pages/settings/BulkDataInsert'));
+const User = lazy(() => import('../components/pages/settings/User'));
+const CitiesList = lazy(() => import('../components/pages/settings/CitiesList'));
+const StatesList = lazy(() => import('../components/pages/settings/StatesList'));
+const TenantsTypeList = lazy(() => import('../components/pages/settings/TenantsTypeList'));
+
+
 
 function AllRoutes() {
     let location = useLocation();
@@ -34,6 +40,11 @@ function AllRoutes() {
 
             <Route exact path="/asset/add" component={() => <AddAssets />} />
             <Route exact path="/settings/bulk" component={() => <BulkDataInsert />} />
+            <Route exact path="/users" component={() => <User />} />
+            <Route exact path="/cities" component={() => <CitiesList />} />
+            <Route exact path="/states" component={() => <StatesList />} />
+            <Route exact path="/tenants/type" component={() => <TenantsTypeList />} />
+            
 
             <PrivateRoutes path="/auth/asset/add" component={() => <AddAssets />} />
             

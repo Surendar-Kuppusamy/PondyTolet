@@ -5,7 +5,8 @@ import {
     ALL_OPTIONS,
     USER_LOGIN_FAIL,
     USER_LOGOUT,
-    ASSET_RESULT
+    ASSET_RESULT,
+    PUSH_OPTION
 } from '../constants/constants';
 
 
@@ -40,6 +41,15 @@ export const assetReducer = (state = initialState, action) => {
             let alloptions = action.payload;
             localStorage.setItem('alloptions', JSON.stringify(alloptions));
             return { ...state, alloptions }
+        }
+        case PUSH_OPTION: {
+            if(action.payload.fieldType == 1) {
+                return {  ...state, ...state.alloptions.city_options.unshift(action.payload.option) }
+            } else if(action.payload == 2) {
+                return {  ...state, ...state.alloptions.state_options.unshift(action.payload.option) }
+            } else if(action.payload == 3) {
+                return {  ...state, ...state.alloptions.who_can_contact_options.unshift(action.payload.option) }
+            }
         }
         default:
             return state;

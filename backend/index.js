@@ -29,13 +29,13 @@ app.use(bodyParser.json());
 
 
 app.get('/',(req,res) => {
-	res.send('GeeksforGeeks');
+	res.send('PondyTolet API Home');
 })
 
 
-app.use(userRoutes)
-app.use(assetRoutes)
-app.use(settingRoutes)
+app.use('/api/user', userRoutes)
+app.use('/api/asset', assetRoutes)
+app.use('/api/setting', settingRoutes)
 
 app.use(notFound)
 app.use(errorHandler)

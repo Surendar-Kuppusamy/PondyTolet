@@ -1,0 +1,23 @@
+Create index file and install express
+npm install express --save
+npm install dotenv
+npm i morgan
+npm install --save path
+npm i body-parser
+npm i multer
+npm i rotating-file-stream
+npm i winston
+npm i mongoose
+npm i express-validator
+npm install cors
+npm i jsonwebtoken
+npm i concurrently
+
+
+
+
+
+
+
+Below link for text search query index.
+//https://mongoosejs.com/docs/guide.html#indexes

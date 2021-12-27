@@ -97,6 +97,11 @@ export const CUSTOM_STYLES = {
       }
 }
 
+export const ENABLE_DISABLE_FILTER = [
+    { key: 1, value: 1, label: 'Enabled' },
+    { key: 2, value: 2, label: 'Disabled' }
+];
+
 export const ERROR_RESPONSE = { status: 'error', message: 'Something went wrong.'}
 
 export const CUSTOM_ERRORS = ['Not authorized, token failed', 'Not authorized, no token'];

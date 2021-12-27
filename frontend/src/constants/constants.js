@@ -27,6 +27,29 @@ export const ASSET_LOADER = 'ASSET_LOADER';
 export const BULK_LOADER = 'BULK_LOADER';
 export const BULK_FORM = 'BULK_FORM';
 export const BULK_RESULT = 'BULK_RESULT';
+export const PUSH_OPTION = 'PUSH_OPTION';
 export const NEW_CITY = 'NEW_CITY';
 export const LOGIN_FORM = 'LOGIN_FORM';
 export const LOGIN_FORM_RESULT = 'LOGIN_FORM_RESULT';
+export const USERS_LIST = 'USERS_LIST';
+export const USERS_LIST_RESULT = 'USERS_LIST_RESULT';
+
+//Start: Users List
+export const USERS = 'USERS';
+export const USERS_RESULT = 'USERS_RESULT';
+//End: Users List
+
+//Start: City List
+export const CITIES = 'CITIES';
+export const CITY_RESULT = 'CITY_RESULT';
+//End: City List
+
+//Start: State List
+export const STATES = 'STATES';
+export const STATE_RESULT = 'STATE_RESULT';
+//Start: State List
+
+//Start: Tenant List
+export const TENANTS = 'TENANTS';
+export const TENANT_RESULT = 'TENANT_RESULT';
+//Start: Tenant List

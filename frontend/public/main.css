@@ -10,11 +10,23 @@
     -webkit-animation: .75s linear infinite spinner-border;
     animation: .75s linear infinite spinner-border;
 }
+.pointer {
+  cursor: pointer;
+}
 .text-primary {
     color: #0d6efd !important;
 }
 .visually-hidden {
     display: none;
+}
+.search {
+  max-width: 100px;
+}
+.width-75 {
+  margin-left: 75%;
+}
+.text-right {
+  text-align: right;
 }
 .loader {
     position: fixed;
@@ -27,6 +39,17 @@
     height: 50px;
     -webkit-animation: spin 2s linear infinite; /* Safari */
     animation: spin 2s linear infinite;
+  }
+  .user_filter .Dropdown-root {
+    width: 25%!important;
+    float: right;
+    padding: 0px 50px;
+  }
+  .user_filter .Dropdown-placeholder {
+    text-align: left!important;
+  }
+  .user_filter .Dropdown-option {
+    text-align: left!important;
   }
   
   /* Safari */

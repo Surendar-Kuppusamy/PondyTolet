@@ -3,7 +3,7 @@ import validator from 'express-validator';
 import  Users from '../models/UserModel.js';
 import { logger } from '../config/configLoggers.js';
 import { userValidationSchema,  customValidationResult } from '../middleware/validationSchemas.js';
-import { generateToken } from '../token/JWT_Token.js';
+import { generateToken } from '../middleware/authMiddleware.js';
 
 const { checkSchema, validationResult } = validator;
 

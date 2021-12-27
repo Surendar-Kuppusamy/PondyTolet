@@ -1,5 +1,8 @@
 import validator from 'express-validator';
 import Users from '../models/UserModel.js';
+import Cities from '../models/CityModel.js';
+import States from '../models/StateModel.js';
+import WhoCanContactUs from '../models/WhoCanContactUsModel.js';
 
 const { validationResult, checkSchema } = validator;
 
@@ -584,6 +587,161 @@ export const createCityValidationSchema = {
                 max: 50
             },
             errorMessage: "Password characters must be greater then 6 and less then 50"
+        }
+    }
+}
+
+export const bulkDataValidationSchema = {
+    'bulk_data.*': {
+        trim: true,
+        notEmpty: {
+            errorMessage: "Name required."
+        },
+        isLength: {
+            options: {
+                min: 3
+            },
+            errorMessage: "Length must be greater or equal to 3 characters."
+        },
+        isLength: {
+            options: {
+                max: 100
+            },
+            errorMessage: "Length must be less or equal to 100 characters."
+        }
+    }
+}
+
+export const createSingleOptionValidationSchema = {
+    option: {
+        trim: true,
+        notEmpty: {
+            errorMessage: "Name required."
+        },
+        isLength: {
+            options: {
+                min: 3
+            },
+            errorMessage: "Length must be greater or equal to 3 characters."
+        },
+        isLength: {
+            options: {
+                max: 100
+            },
+            errorMessage: "Length must be less or equal to 100 characters."
+        }
+    }
+}
+
+export const editCityValidationSchema = {
+    city_name: {
+        trim: true,
+        notEmpty: {
+            errorMessage: "City required."
+        },
+        isLength: {
+            options: {
+                min: 3
+            },
+            errorMessage: "City length must be greater or equal to 3 characters."
+        },
+        isLength: {
+            options: {
+                max: 100
+            },
+            errorMessage: "City length must be less or equal to 100 characters."
+        },
+        custom: {
+            options: (value, { req, location, path }) => {
+                return Cities.find({
+                        $and: [
+                            {city_name: value},
+                            {_id: { $ne: req.body.id }}
+                        ]
+                }).then(city => {
+                    if (city.length > 0) {
+                        return Promise.reject('City already available.');
+                    } else {
+                        return Promise.resolve(true);
+                    }
+                })
+            }
+        }
+    }
+}
+
+export const editStateValidationSchema = {
+    state_name: {
+        trim: true,
+        notEmpty: {
+            errorMessage: "State required."
+        },
+        isLength: {
+            options: {
+                min: 3
+            },
+            errorMessage: "State length must be greater or equal to 3 characters."
+        },
+        isLength: {
+            options: {
+                max: 100
+            },
+            errorMessage: "State length must be less or equal to 100 characters."
+        },
+        custom: {
+            options: (value, { req, location, path }) => {
+                return States.find({
+                        $and: [
+                            {state_name: value},
+                            {_id: { $ne: req.body.id }}
+                        ]
+                }).then(state => {
+                    if (state.length > 0) {
+                        return Promise.reject('State is already available.');
+                    } else {
+                        return Promise.resolve(true);
+                    }
+                })
+            }
+        }
+    }
+}
+
+
+
+export const editTenantValidationSchema = {
+    tenant_type: {
+        trim: true,
+        notEmpty: {
+            errorMessage: "Tenant type is required."
+        },
+        isLength: {
+            options: {
+                min: 3
+            },
+            errorMessage: "Tenant type length must be greater or equal to 3 characters."
+        },
+        isLength: {
+            options: {
+                max: 100
+            },
+            errorMessage: "Tenant type length must be less or equal to 100 characters."
+        },
+        custom: {
+            options: (value, { req, location, path }) => {
+                return WhoCanContactUs.find({
+                        $and: [
+                            {tenant_type: value},
+                            {_id: { $ne: req.body.id }}
+                        ]
+                }).then(tenant => {
+                    if (tenant.length > 0) {
+                        return Promise.reject('Tenant type is already available.');
+                    } else {
+                        return Promise.resolve(true);
+                    }
+                })
+            }
         }
     }
 }

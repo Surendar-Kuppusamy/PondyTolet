@@ -93,7 +93,7 @@ const UserSchema = new Schema({
             message: '{VALUE} is invalid type.'
         }
     },
-    user_status: {        //user_status (1 - active, 0 - disabled)
+    user_status: {        //user_status (1 - active, 2 - disabled)
         type: Number,
         required: [true, 'User status required.'],
         enum: {

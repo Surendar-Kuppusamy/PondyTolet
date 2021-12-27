@@ -72,12 +72,12 @@ function Signup(props) {
             .min(10, 'Invalid mobile number')
             .max(10,'Invalid mobile number')
             .required('Mobile number is required'),
-        std_code:Yup.string().matches(/^\d{4}$/, 'Invalid STD code')
+        std_code:Yup.string()
             .min(3, 'Invalid STD code')
             .max(4,'Invalid STD code'),
-        telephone_number: Yup.string().matches(/^\d{4}$/, 'Invalid telephone number')
-            .min(3, 'Invalid telephone number')
-            .max(4,'Invalid telephone number'),
+        telephone_number: Yup.string()
+            .min(6, 'Invalid telephone number')
+            .max(8,'Invalid telephone number'),
         address: Yup.string()
             .required('Address is required'),
         user_type:Yup.number()
@@ -125,27 +125,27 @@ function Signup(props) {
                                     <FileUploadComponent maxFiles="4" fileTypes=".jpeg,.png" setField={props} fieldName={'files'} />
                                 </div> */}
                                 <div className="mb-3">
-                                    <label htmlFor="first_name" className="form-label">First Name</label>
+                                    <label htmlFor="first_name" className="form-label">First Name<span className="pl-2 text-danger">*</span></label>
                                     <input type="text" className={'form-control' + (props.errors.first_name && props.touched.first_name ? ' is-invalid' : '')} id="first_name" name="first_name" placeholder="Enter your first name" onChange={props.handleChange} onBlur={props.handleBlur} value={props.values.first_name}  />
                                     <ErrorMessage name="first_name" component="span" className="text-danger" />
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="last_name" className="form-label">Last Name</label>
+                                    <label htmlFor="last_name" className="form-label">Last Name<span className="pl-2 text-danger">*</span></label>
                                     <input type="text" className={'form-control' + (props.errors.last_name && props.touched.last_name ? ' is-invalid' : '')} id="last_name" name="last_name" placeholder="Enter your last name" onChange={props.handleChange} onBlur={props.handleBlur} value={props.values.last_name} />
                                     <ErrorMessage name="last_name" component="span" className="text-danger" />
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="email" className="form-label">Email</label>
+                                    <label htmlFor="email" className="form-label">Email<span className="pl-2 text-danger">*</span></label>
                                     <input type="text" className={'form-control' + (props.errors.email && props.touched.email ? ' is-invalid' : '')} id="email" name="email" placeholder="Enter your email" onChange={props.handleChange} onBlur={props.handleBlur} value={props.values.email} />
                                     <ErrorMessage name="email" component="span" className="text-danger" />
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="password" className="form-label">Password</label>
+                                    <label htmlFor="password" className="form-label">Password<span className="pl-2 text-danger">*</span></label>
                                     <input type="password" className={'form-control' + (props.errors.password && props.touched.password ? ' is-invalid' : '')} id="password" name="password" placeholder="Enter your password" onChange={props.handleChange} onBlur={props.handleBlur} value={props.values.password} />
                                     <ErrorMessage name="password" component="span" className="text-danger" />
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="confirm_password" className="form-label">Confirm Password</label>
+                                    <label htmlFor="confirm_password" className="form-label">Confirm Password<span className="pl-2 text-danger">*</span></label>
                                     <input type="password" className={'form-control' + (props.errors.confirm_password && props.touched.confirm_password ? ' is-invalid' : '')} id="confirm_password" name="confirm_password" placeholder="Re-enter password" onChange={props.handleChange} onBlur={props.handleBlur} value={props.values.confirm_password} />
                                     <ErrorMessage name="confirm_password" component="span" className="text-danger" />
                                 </div>
@@ -158,7 +158,7 @@ function Signup(props) {
                                     <ErrorMessage name="dob" component="span" className="text-danger" />
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="mobile_number" className="form-label">Mobile Number</label>
+                                    <label htmlFor="mobile_number" className="form-label">Mobile Number<span className="pl-2 text-danger">*</span></label>
                                     <input type="text" className={'form-control' + (props.errors.mobile_number && props.touched.mobile_number ? ' is-invalid' : '')} id="mobile_number" name="mobile_number" placeholder="Enter your Mobile number" onChange={props.handleChange} onBlur={props.handleBlur} value={props.values.mobile_number} />
                                     <ErrorMessage name="mobile_number" component="span" className="text-danger" />
                                 </div>
@@ -178,12 +178,12 @@ function Signup(props) {
                                     </div>
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="address" className="form-label">Address</label>
+                                    <label htmlFor="address" className="form-label">Address<span className="pl-2 text-danger">*</span></label>
                                     <textarea className={'form-control' + (props.errors.address && props.touched.address ? ' is-invalid' : '')} id="address" name="address" placeholder="Enter address" rows="3" onChange={props.handleChange} onBlur={props.handleBlur} value={props.values.address}></textarea>
                                     <ErrorMessage name="address" component="span" className="text-danger" />
                                 </div>
                                 <div className="mb-2">
-                                    User Type
+                                    User Type<span className="pl-2 text-danger">*</span>
                                     <ErrorMessage name="user_type" component="span" className="text-danger" />
                                 </div>
                                 <div className="form-check form-check-inline">
